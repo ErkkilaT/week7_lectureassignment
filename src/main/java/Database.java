@@ -7,8 +7,8 @@ public class Database {
     private static final String USER = "root";
     private static final String PASSWORD = "root";
 
-    public static void saveTemperature(double celsius, double fahrenheit, Label statusLabel) {
-        String sql = "INSERT INTO temperature_log (celsius, fahrenheit) VALUES (?, ?)";
+    public static void saveTemperature(double celsius, double fahrenheit, double kelvin, Label statusLabel) {
+        String sql = "INSERT INTO temperature_log (celsius, fahrenheit, kelvin) VALUES (?, ?, ?)";
 
         try (Connection conn = DriverManager.getConnection(URL, USER, PASSWORD);
              PreparedStatement stmt = conn.prepareStatement(sql)) {
