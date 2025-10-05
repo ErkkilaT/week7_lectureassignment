@@ -7,8 +7,8 @@ pipeline {
 
     environment {
         PATH = "C:\\Program Files\\Docker\\Docker\\resources\\bin;${env.PATH}"
-        DOCKERHUB_CREDENTIALS_ID = 'Docker_Hub'
-        DOCKER_IMAGE = 'amirdirin/javafx_with_db2'
+        DOCKERHUB_CREDENTIALS_ID = 'Docker_hub'
+        DOCKER_IMAGE = 'oomis1/otp1_week7'
         DOCKER_TAG = 'latest'
     }
 
@@ -24,7 +24,7 @@ pipeline {
 
         stage('Checkout') {
             steps {
-                git branch: 'master', url: 'https://github.com/ADirin/javafx_with_mariadb.git'
+                git branch: 'master', url: 'https://github.com/ErkkilaT/week7_lectureassignment'
             }
         }
 
