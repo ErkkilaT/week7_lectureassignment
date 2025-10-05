@@ -53,27 +53,33 @@ public class Main extends Application {
             if(from.equals("Celsius") && to.equals("Fahrenheit")){
                 celsius = valueFrom;
                 fahrenheit = (celsius * 9 / 5) + 32;
+                kelvin = celsius + 273.15;
                 resultLabel.setText(String.format("Fahrenheit: %.2f", fahrenheit));
             }else if(from.equals("Fahrenheit") && to.equals("Celsius")){
                 fahrenheit = valueFrom;
                 celsius = (fahrenheit - 32) * 5 / 9;
-                resultLabel.setText(String.format("Celsius: %.2f", fahrenheit));
+                kelvin = celsius + 273.15;
+                resultLabel.setText(String.format("Celsius: %.2f", celsius));
             }else if(from.equals("Celsius") && to.equals("Kelvin")){
                 celsius = valueFrom;
                 kelvin = celsius + 273.15;
-                resultLabel.setText(String.format("Kelvin: %.2f", fahrenheit));
+                fahrenheit = (celsius * 9 / 5) + 32;
+                resultLabel.setText(String.format("Kelvin: %.2f", kelvin));
             }else if(from.equals("Kelvin") && to.equals("Celsius")){
                 kelvin = valueFrom;
                 celsius = kelvin - 273.15;
-                resultLabel.setText(String.format("Celsius: %.2f", fahrenheit));
+                fahrenheit = (celsius * 9 / 5) + 32;
+                resultLabel.setText(String.format("Celsius: %.2f", celsius));
             }else if(from.equals("Kelvin") && to.equals("Fahrenheit")){
                 kelvin = valueFrom;
                 fahrenheit = (kelvin - 273.15) * 9 / 5 + 32;
+                celsius = (fahrenheit - 32) * 5 / 9;
                 resultLabel.setText(String.format("Fahrenheit: %.2f", fahrenheit));
             }else if(from.equals("Fahrenheit") && to.equals("Kelvin")){
                 fahrenheit = valueFrom;
                 kelvin = (fahrenheit - 32) * 5 / 9 + 273.15;
-                resultLabel.setText(String.format("Kelvin: %.2f", fahrenheit));
+                celsius = (fahrenheit - 32) * 5 / 9;
+                resultLabel.setText(String.format("Kelvin: %.2f", kelvin));
             }
         } catch (NumberFormatException ex) {
             resultLabel.setText("Invalid input!");

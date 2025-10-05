@@ -15,6 +15,7 @@ public class Database {
 
             stmt.setDouble(1, celsius);
             stmt.setDouble(2, fahrenheit);
+            stmt.setDouble(3, kelvin);
             stmt.executeUpdate();
             statusLabel.setText("Saved to database!");
 
